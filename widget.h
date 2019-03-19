@@ -14,14 +14,14 @@ class Widget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit Widget(int cellSize, int width, int height, node** map, QWidget *parent = nullptr);
-    void saveImage();
+    explicit Widget(int cellSize, int width, int height, node** maps, QWidget *parent = nullptr);
     void paintEvent(QPaintEvent *event);
+    node** map;
 private:
     int cellSize;
     int width;
     int height;
-    node** map;
+
 };
 
 #endif // WIDGET_H

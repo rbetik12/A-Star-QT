@@ -4,8 +4,7 @@ struct node;
 class Labyrinth
 {
 public:
-	explicit Labyrinth(int width, int height);
-	~Labyrinth();
+    explicit Labyrinth(int width, int height, bool random = true, int start_x = 0, int start_y = 0, int finish_x = 0, int finish_y = 0);
 	node getStartNode();
 	node getGoalNode();
 	bool findWay();

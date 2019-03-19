@@ -1,6 +1,6 @@
 #include "labyrinth.h"
 
-Labyrinth::Labyrinth(int width, int height)
+Labyrinth::Labyrinth(int width, int height, bool random, int start_x, int start_y, int finish_x, int finish_y)
 {
 	this->width = width;
 	this->height = height;
@@ -11,11 +11,19 @@ Labyrinth::Labyrinth(int width, int height)
 	}
 
 	srand(time(NULL));
-
-	int startX = rand() % (width - 2) + 1;
-	int startY = rand() % (height - 2) + 1;
-	int finishX = rand() % (width - 2) + 1;
-	int finishY = rand() % (height - 2) + 1;
+    int startX, startY, finishX, finishY;
+    if (random == true){
+        startX = rand() % (width - 2) + 1;
+        startY = rand() % (height - 2) + 1;
+        finishX = rand() % (width - 2) + 1;
+        finishY = rand() % (height - 2) + 1;
+    }
+    else{
+        startX = start_x;
+        startY = start_y;
+        finishX = finish_x;
+        finishY = finish_y;
+    }
 
 	for (int y = 0; y < height; y++)
 	{
@@ -56,10 +64,6 @@ Labyrinth::Labyrinth(int width, int height)
 	}
 }
 
-Labyrinth::~Labyrinth()
-{
-	delete labyrinth;
-}
 
 node Labyrinth::getStartNode()
 {
@@ -108,7 +112,7 @@ void Labyrinth::printDebug()
     std::cout << std::endl;
 }
 
-node **Labyrinth::getLabyrinth()
+node** Labyrinth::getLabyrinth()
 {
     return labyrinth;
 }
