@@ -29,17 +29,23 @@ SOURCES += \
         widget.cpp \
     util.cpp \
     util.cpp \
-    labyrinth.cpp
+    labyrinth.cpp \
+    mainwindow.cpp \
+    mainwindow.cpp
 
 HEADERS += \
     util.h \
     labyrinth.h \
     widget.h \
     util.h \
-    labyrinth.h
+    labyrinth.h \
+    mainwindow.h \
+    mainwindow.h
 
 FORMS += \
-        widget.ui
+        widget.ui \
+    mainwindow.ui \
+    mainwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
