@@ -3,9 +3,7 @@
 
 Widget::Widget(int cellSize, int width, int height, node** map, QWidget *parent) :
     QWidget(parent)
-    //ui(new Ui::Widget)
 {
-    //ui->setupUi(this);
     this->cellSize = cellSize;
     this->width = width;
     this->height = height;
